@@ -1,0 +1,27 @@
+﻿@model IEnumerable<GuestBookMVC.Clients.Web.Models.GuestBookEntry>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Guest book entries:</h2>
+
+@foreach (var entry in @Model)
+{
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            Date: @entry.InsertDate.ToString()
+            <br />
+            Name: @entry.Name
+            <br />
+            E-mail: @entry.Email
+            <br />
+            Website: @entry.Website
+        </div>
+        <div class="panel-body">
+            @entry.Message
+        </div>
+    </div>
+}
+
+@Html.Partial("Create", new GuestBookMVC.Clients.Web.Models.GuestBookEntry())

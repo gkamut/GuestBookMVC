@@ -1,0 +1,25 @@
+﻿@model GuestBookMVC.Clients.Web.Models.GuestBookEntry
+
+@using (Html.BeginForm("Create","GuestBook", FormMethod.Post))
+{
+    <p>
+        @Html.LabelFor(model => model.Name)
+        @Html.EditorFor(model => model.Name)
+    </p>
+    <p>
+        @Html.LabelFor(model => model.Email)
+        @Html.EditorFor(model => model.Email)
+    </p>
+    <p>
+        @Html.LabelFor(model => model.Website)
+        @Html.EditorFor(model => model.Website)
+    </p>
+    <p>
+        @Html.LabelFor(model => model.Message)
+        @Html.EditorFor(model => model.Message)
+    </p>
+
+    <p>
+        <input type="submit" value="Post message" class="btn btn-default" />
+    </p>
+}
